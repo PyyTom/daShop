@@ -10,10 +10,15 @@ col1,col2,col3,col4=columns([100,400,500,300])
 with col1:image('imagenes/amazon.png',width=100)
 with col2:image('imagenes/logo.png',width=200)
 with col3:title("Tommy's Amazon's choices")
-with col4:contacto=clickable_images(contactos,img_style={'height':'100px'})
+with col4:
+    link_button('YouTube',url='https://www.youtube.com/@Tommys-jy9oq')
+    link_button('FaceBook', url='https://www.facebook.com/profile.php?id=61557025805896')
+    link_button('InstaGram',url='https://www.instagram.com/tommys_amazon')
+'''    contacto=clickable_images(contactos,img_style={'height':'100px'})
 if contacto==0:webbrowser.open_new_tab('https://www.youtube.com/@Tommys-jy9oq')
 elif contacto == 1: webbrowser.open_new_tab('https://www.facebook.com/profile.php?id=61557025805896')
 elif contacto == 2: webbrowser.open_new_tab('https://www.instagram.com/tommys_amazon')
+'''
 casa_inteligente,ebooks,hogar,mascotas,moda,oficina,salud_y_belleza=tabs([tab[0] for tab in db.execute('select COLLECION from PRODUCTOS group by COLLECION').fetchall()])
 def compra(enlace):
     webbrowser.open_new_tab(enlace)
