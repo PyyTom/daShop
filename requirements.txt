@@ -1,2 +1,1 @@
-st-clickable-images==0.0.3
 streamlit==1.38.0
